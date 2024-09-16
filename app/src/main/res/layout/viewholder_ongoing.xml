@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_light_purple"
+    android:layout_margin="8dp"
+    android:id="@+id/rowLayout"
+    android:layout_height="167dp">
+
+    <TextView
+        android:id="@+id/rowTxtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/dark_purple"
+        tools:text="june 26,2023"
+        />
+    <ImageView
+        android:id="@+id/rowImage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/ongoing2"
+        app:layout_constraintStart_toStartOf="@id/rowTxtDate"
+        app:layout_constraintTop_toBottomOf="@id/rowTxtDate"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/rowTxtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/dark_purple"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/rowImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowImage"
+        app:layout_constraintTop_toTopOf="@id/rowImage"
+        tools:text="Food App" />
+
+    <TextView
+        android:id="@+id/rowTxtProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rowImage"
+        app:layout_constraintStart_toStartOf="@id/rowImage"
+        android:layout_marginTop="16dp"
+        android:text="Progress"
+        android:textColor="@color/dark_purple"
+        />
+
+    <ProgressBar
+        android:id="@+id/rowProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@id/rowTxtProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:max="100"
+        android:progress="40"
+        android:progressTint="@color/dark_purple"
+        app:layout_constraintTop_toBottomOf="@id/rowTxtProgress"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/rowTxtPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rowProgressBar"
+        app:layout_constraintEnd_toEndOf="@id/rowProgressBar"
+        tools:text="50%"
+        android:textColor="@color/dark_purple"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
