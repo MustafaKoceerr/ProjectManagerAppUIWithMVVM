@@ -17,7 +17,8 @@ import com.android.example.projectmanagerappwithmvvm.R
 import com.android.example.projectmanagerappwithmvvm.domain.OnGoingDomain
 import com.bumptech.glide.Glide
 
-class OnGoingAdapter(private val items : List<OnGoingDomain>):RecyclerView.Adapter<OnGoingAdapter.OnGoingViewHolder>() {
+class OnGoingAdapter(private val items: List<OnGoingDomain>) :
+    RecyclerView.Adapter<OnGoingAdapter.OnGoingViewHolder>() {
     class OnGoingViewHolder(itemView: View) : ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.rowTxtTitle)
         val date: TextView = itemView.findViewById(R.id.rowTxtDate)
@@ -27,7 +28,7 @@ class OnGoingAdapter(private val items : List<OnGoingDomain>):RecyclerView.Adapt
         val pic: ImageView = itemView.findViewById(R.id.rowImage)
         val layout: ConstraintLayout = itemView.findViewById(R.id.rowLayout)
 
-        fun bindData(item : OnGoingDomain){
+        fun bindData(item: OnGoingDomain) {
             title.text = item.title
             date.text = item.date
             progressBarPercent.text = "${item.progressPercent}%"
@@ -41,24 +42,29 @@ class OnGoingAdapter(private val items : List<OnGoingDomain>):RecyclerView.Adapt
             progressBar.progress = item.progressPercent
 
             layout.setOnClickListener {
-                Toast.makeText(itemView.context, "deneme",Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context, "deneme", Toast.LENGTH_SHORT).show()
             }
 
         }
 
-        fun setTextColor(colorRes:Int){
+        fun setTextColor(colorRes: Int) {
             title.setTextColor(itemView.context.getColor(colorRes))
             date.setTextColor(itemView.context.getColor(colorRes))
             progressTxt.setTextColor(itemView.context.getColor(colorRes))
             progressBarPercent.setTextColor(itemView.context.getColor(colorRes))
-            pic.setColorFilter(ContextCompat.getColor(itemView.context, colorRes), PorterDuff.Mode.SRC_IN)
-            progressBar.progressTintList = ColorStateList.valueOf(ContextCompat.getColor(itemView.context, colorRes))
+            pic.setColorFilter(
+                ContextCompat.getColor(itemView.context, colorRes),
+                PorterDuff.Mode.SRC_IN
+            )
+            progressBar.progressTintList =
+                ColorStateList.valueOf(ContextCompat.getColor(itemView.context, colorRes))
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnGoingViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_ongoing, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.viewholder_ongoing, parent, false)
         return OnGoingViewHolder(view)
     }
 
@@ -69,11 +75,11 @@ class OnGoingAdapter(private val items : List<OnGoingDomain>):RecyclerView.Adapt
     override fun onBindViewHolder(holder: OnGoingViewHolder, position: Int) {
         holder.bindData(items[position])
 
-        with(holder){
-            if (position == 0){
+        with(holder) {
+            if (position == 0) {
                 layout.setBackgroundResource(R.drawable.background_dark)
                 setTextColor(R.color.white)
-            }else{
+            } else {
                 layout.setBackgroundResource(R.drawable.background_light_purple)
                 setTextColor(R.color.dark_purple)
             }
