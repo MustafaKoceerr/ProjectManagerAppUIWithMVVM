@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.android.example.projectmanagerappwithmvvm.R
 import com.android.example.projectmanagerappwithmvvm.adapter.OnGoingAdapter
 import com.android.example.projectmanagerappwithmvvm.databinding.ActivityMainBinding
-import com.android.example.projectmanagerappwithmvvm.domain.OnGoingDomain
 import com.android.example.projectmanagerappwithmvvm.viewmodel.MainViewModel
 
 class DashboardActivity : AppCompatActivity() {
@@ -28,10 +27,6 @@ class DashboardActivity : AppCompatActivity() {
             insets
         }
 
-        println("selamlar")
-        mainViewModel.loadData().forEach {
-            println("${it}, ${it.date}")
-        }
         with(binding) {
             val onGoingAdapter by lazy { OnGoingAdapter(mainViewModel.loadData()) }
 
@@ -39,7 +34,6 @@ class DashboardActivity : AppCompatActivity() {
                 adapter = onGoingAdapter
                 layoutManager = GridLayoutManager(this@DashboardActivity, 2)
             }
-
         }
 
     }
