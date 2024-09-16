@@ -24,7 +24,7 @@ With this app you can:
     <th>Profile Scan</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/c45dad8b-4ca2-4f2c-8006-b827645ad34d" height="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/2648c20f-09e3-42dd-896c-440541e0bc70" height="500"></td>
     <td><img src="https://github.com/user-attachments/assets/584dc1aa-2a76-4f10-acea-d47a3958fd2b" height="500"></td>
   </tr>
 </table>
