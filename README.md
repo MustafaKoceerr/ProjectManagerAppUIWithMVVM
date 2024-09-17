@@ -21,7 +21,7 @@ With this app you can:
 <table>
   <tr>
     <th>Dashboard Screen</th>
-    <th>Profile Scan</th>
+    <th>Profile Screen</th>
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/2648c20f-09e3-42dd-896c-440541e0bc70" height="500"></td>
